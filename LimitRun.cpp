@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <string>
 #include <getopt.h>
+#include <cerrno>
 #include "libLimitRun.h"
 
 
@@ -35,6 +36,9 @@ int main (int argc, char **argv) {
                 break;
         }
     }
-
+    if (strlen(progToRun) == 0) {
+        printf("Please enter name of program to run with -f argument");
+        return EINVAL;
+    }
     setLimitAndRun(progToRun);
 }

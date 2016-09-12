@@ -7,13 +7,13 @@
 #include <unistd.h>
 #include "libLimitRun.h"
 
-void setLimitAndRun (std::string progName) {
+void setLimitAndRun (std::string progName, rlim_t timeLimit=LIMIT_TIME_MAX, rlim_t memLimit=LIMIT_MEM_MAX) {
 
-    timeResourceLimit.rlim_cur = LIMIT_TIME_MAX;
-    timeResourceLimit.rlim_max = LIMIT_TIME_MAX;
+    timeResourceLimit.rlim_cur = timeLimit;
+    timeResourceLimit.rlim_max = timeLimit;
 
-    memResourceLimit.rlim_cur = LIMIT_MEM_MAX;
-    memResourceLimit.rlim_max = LIMIT_MEM_MAX;
+    memResourceLimit.rlim_cur = memLimit;
+    memResourceLimit.rlim_max = memLimit;
 
 
 
