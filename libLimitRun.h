@@ -14,6 +14,6 @@ static const rlim_t LIMIT_MEM_MAX = 10;
 static rlimit timeResourceLimit;
 static rlimit memResourceLimit;
 
-void setLimitAndRun(std::string progName);
+void setLimitAndRun(std::string progName, rlim_t t, rlim_t m);
 
 #endif //LIMITRUN_LIBLIMITRUN_H

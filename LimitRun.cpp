@@ -3,7 +3,7 @@
 //
 
 #include <cstdio>
-#include <string>
+#include <cstring>
 #include <getopt.h>
 #include <cerrno>
 #include "libLimitRun.h"
@@ -17,28 +17,30 @@ static bool DEBUG = false;
 
 using namespace std;
 int main (int argc, char **argv) {
-    printf("Hello");
     int opt;
     string progToRun;
+    rlim_t tLimit, mLimit;
 
     while ((opt = getopt (argc, argv, "t:m:f:")) != -1) {
         switch (opt) {
             case 't':
-                if (DEBUG) printf("t %d", stoi(optarg));
+                tLimit = stoi(optarg);
+                if (DEBUG) fprintf(stdout, "\nCPU Time limit :\t %d s", tLimit);
                 break;
             case 'm':
-                if (DEBUG) printf("m %d", stoi(optarg));
+                mLimit = stoi(optarg);
+                if (DEBUG) fprintf(stdout, "\nAddress Space limit :\t %d bytes", mLimit);
                 break;
             case 'f':
                 progToRun = optarg;
-                if (DEBUG) printf("f %s", optarg);
+                if (DEBUG) fprintf(stdout, "\nFile to execute :\t %s", optarg);
 
                 break;
         }
     }
-    if (strlen(progToRun) == 0) {
-        printf("Please enter name of program to run with -f argument");
+    if (strlen(progToRun.c_str()) == 0) {
+        fprintf(stderr, "\nPlease enter name of program to run with -f argument\n");
         return EINVAL;
     }
-    setLimitAndRun(progToRun);
+    setLimitAndRun(progToRun, tLimit, mLimit);
 }

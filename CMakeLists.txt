@@ -6,7 +6,7 @@ set(CMAKE_CXX_COMPILER g++) #Make sure we do not use clang or gcc
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 # Uncomment to debug
-#add_definitions(-DLOG_DEBUG)
+add_definitions(-DLOG_DEBUG)
 
 set(LIB_RUNNER_SOURCE libLimitRun.cpp)
 set(RUNNER_SOURCE LimitRun.cpp)
