@@ -8,6 +8,8 @@
 
 int main () {
 
+    printf("Infinite while loop");
+
     rlimit tLimit, mLimit;
     getrlimit(RLIMIT_CPU, &tLimit);
     getrlimit(RLIMIT_AS, &mLimit);

@@ -7,6 +7,8 @@
 #include <cstdlib>
 int main () {
 
+    printf("Large array test");
+
     rlimit tLimit, mLimit;
     getrlimit(RLIMIT_CPU, &tLimit);
     getrlimit(RLIMIT_AS, &mLimit);

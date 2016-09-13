@@ -15,9 +15,9 @@ void setLimitAndRun (std::string progName, rlim_t timeLimit=LIMIT_TIME_MAX, rlim
     memResourceLimit.rlim_cur = memLimit;
     memResourceLimit.rlim_max = memLimit;
 
-
-
+    printf("setLimitAndRun");
     if (fork() == 0) {
+        printf("Child process");
         setrlimit(RLIMIT_CPU, &timeResourceLimit);
 //        setrlimit(RLIMIT_MEMLOCK, &memResourceLimit);
         setrlimit(RLIMIT_AS, &memResourceLimit);
