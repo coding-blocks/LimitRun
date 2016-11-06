@@ -7,6 +7,12 @@
 #include <unistd.h>
 #include "libLimitRun.h"
 
+/*!
+ * setLimitAndRun - function to run a program with time and memory limit
+ * @param progName - path of program to run (relative to pwd allowed)
+ * @param timeLimit  - CPU usage time limit in seconds
+ * @param memLimit  - Memory (Address space) limit in bytes
+ */
 void setLimitAndRun (std::string progName, rlim_t timeLimit=LIMIT_TIME_MAX, rlim_t memLimit=LIMIT_MEM_MAX) {
 
     timeResourceLimit.rlim_cur = timeLimit;

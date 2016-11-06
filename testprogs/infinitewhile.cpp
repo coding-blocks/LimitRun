@@ -5,18 +5,20 @@
 #include <cstdio>
 #include <sys/resource.h>
 #include <cstdlib>
+#include <zconf.h>
 
 int main () {
 
-    printf("Infinite while loop");
+    fprintf(stderr, "Infinite while loop");
 
     rlimit tLimit, mLimit;
     getrlimit(RLIMIT_CPU, &tLimit);
     getrlimit(RLIMIT_AS, &mLimit);
 
-    printf("tLimit = %d  ", tLimit.rlim_max);
-    printf("mLimit = %d  ", mLimit.rlim_max);
-    while (1) {
+    fprintf(stderr, "tLimit = %d  ", tLimit.rlim_max);
+    fprintf(stderr, "mLimit = %d  ", mLimit.rlim_max);
+    int a = 1;
+    while (a) {
 
     }
 }

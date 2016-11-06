@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/libLimitRun.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/libLimitRun.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/testprogs/largearray.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testprogs/infinitewhile.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
