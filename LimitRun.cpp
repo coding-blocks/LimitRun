@@ -2,8 +2,7 @@
 // Created by Arnav Gupta on 12/09/16.
 //
 
-#include <cstdio>
-#include <cstring>
+#include <bits/stdc++.h>
 #include <getopt.h>
 #include <cerrno>
 #include "libLimitRun.h"
