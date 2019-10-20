@@ -36,11 +36,15 @@ int main (int argc, char **argv) {
                 if (DEBUG) fprintf(stdout, "\nFile to execute :\t %s", optarg);
 
                 break;
+            default://any required task or error message
         }
     }
     if (strlen(progToRun.c_str()) == 0) {
         fprintf(stderr, "\nPlease enter name of program to run with -f argument\n");
         return EINVAL;
     }
+    else
+        //any error message or any task
+        ;
     setLimitAndRun(progToRun, tLimit, mLimit);
 }
