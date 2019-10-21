@@ -38,7 +38,7 @@ int main (int argc, char **argv) {
                 break;
         }
     }
-    if (strlen(progToRun.c_str()) == 0) {
+    if (progToRun.empty()) {
         fprintf(stderr, "\nPlease enter name of program to run with -f argument\n");
         return EINVAL;
     }

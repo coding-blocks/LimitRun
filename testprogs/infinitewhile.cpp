@@ -17,8 +17,8 @@ int main () {
 
     fprintf(stderr, "tLimit = %d  ", tLimit.rlim_max);
     fprintf(stderr, "mLimit = %d  ", mLimit.rlim_max);
-    int a = 1;
-    while (a) {
+
+    while (true) {
 
     }
 }
