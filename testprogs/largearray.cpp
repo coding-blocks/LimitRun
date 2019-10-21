@@ -45,7 +45,8 @@ int main () {
 //        }
 //
 //    }
-    while(1) {
+
+    while(true) {
         fork();
     }
 }
